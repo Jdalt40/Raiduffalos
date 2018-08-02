@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- xpath code by dninemfive and spuddy -->
+<Operation Class="PatchOperationConditional">
+<xpath>*/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[@OtherRaiderAnimalsInsertionHook = "True"]</xpath>
+<nomatch Class="PatchOperationAdd">
+      <xpath>*/FactionDef[defName = "Pirate"]/pawnGroupMakers</xpath>
+      <value>
+        <li OtherRaiderAnimalsInsertionHook="True">
+          <!-- pirate raid with raiderpedes -->        
+          <kindDef>Normal</kindDef>
+          <commonality>100</commonality>
+          <disallowedStrategies>
+            <li>Siege</li>
+          </disallowedStrategies>
+          <options>
+            <Drifter>5</Drifter>
+            <GrenadierEMP>5</GrenadierEMP>
+            <GrenadierDestructive>20</GrenadierDestructive>
+            <Thrasher>70</Thrasher>
+            <MercenarySlasher>70</MercenarySlasher>
+            <MercenaryHeavy>60</MercenaryHeavy>
+            <MercenarySniper>80</MercenarySniper>
+            <Scavenger>100</Scavenger>
+            <Pirate>120</Pirate>
+            <MercenaryGunner>100</MercenaryGunner>
+            <MercenaryElite>100</MercenaryElite>
+            <PirateBoss>100</PirateBoss>
+            <Raiduffalo>80</Raiduffalo>
+          </options>
+        </li>
+      </value>
+</nomatch>
+<match Class="PatchOperationAdd">
+<xpath>*/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[@OtherRaiderAnimalsInsertionHook = "True"]/options</xpath>
+<value><Raiduffalo>80</Raiduffalo></value>
+</match>
+</Operation>
+	<Operation Class="PatchOperationAdd"> <!-- adding raiderpedes to base defense -->
+	  <xpath>*/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[kindDef = "FactionBase"]/options</xpath>
+	  <value>
+		<Raiduffalo>70</Raiduffalo>
+	  </value>
+	</Operation> 
+</Patch>

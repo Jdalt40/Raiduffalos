@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BasePawn" Name="BaseRaiduffalo" Abstract="True">
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <statBases>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+    </statBases>
+	
+    <race>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+	  <thinkTreeMain>Animal</thinkTreeMain>
+      <thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+	  <hediffGiverSets>
+        <li>OrganicStandard</li>
+      </hediffGiverSets>
+    </race>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseRaiduffalo">
+    <defName>Raiduffalo</defName>
+    <label>raiduffalo</label>
+    <description>A large herding herbivore descended from buffalo and adapted for some exotic environment that was turned into a metal abomination that wants nothing but the flesh of its enemies crushed into a pulp. Hooked on heavy drugs to improve speed and agility</description>
+    <statBases>
+      <MoveSpeed>3.6</MoveSpeed>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <MarketValue>2000</MarketValue>
+	  <MeatAmount>0</MeatAmount>
+	  <LeatherAmount>0</LeatherAmount>
+	  <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <commonality>0.2</commonality>
+      </li>
+    </tools>
+    <race>
+	  <useMeatFrom>Cassowary</useMeatFrom>
+	  <useLeatherFrom>Cassowary</useLeatherFrom>
+      <body>Raiduffalo</body>
+      <baseBodySize>4.2</baseBodySize>
+      <baseHealthScale>3.5</baseHealthScale>
+			<baseHungerRate>0.4</baseHungerRate>
+      <foodType>None</foodType>
+      <wildness>0.5</wildness>
+      <lifeExpectancy>15</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>Raiduffalo_Adult</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+          <soundDeath>Pawn_Muffalo_Death</soundDeath>
+          <soundCall>Pawn_Muffalo_Call</soundCall>
+          <soundAngry>Pawn_Muffalo_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+     <butcherProducts>
+      <Steel>200</Steel>
+      <Plasteel>50</Plasteel>
+      <Component>2</Component>
+    </butcherProducts>
+  </ThingDef>
+  
+    <LifeStageDef>
+    <defName>Raiduffalo_Adult</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>false</reproductive>
+    <milkable>false</milkable>
+    <shearable>false</shearable>
+  </LifeStageDef>
+  
+</Defs>

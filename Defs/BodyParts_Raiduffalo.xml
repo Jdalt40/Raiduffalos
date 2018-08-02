@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- torso for animals -->
+  <BodyPartDef>
+    <defName>BodyMuffalo</defName>
+    <label>body</label>
+    <hitPoints>40</hitPoints>
+    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <skinCovered>true</skinCovered>
+	<isAlive>false</isAlive>
+	<isSolid>true</isSolid>
+	<bleedingRateMultiplier>0</bleedingRateMultiplier>
+  </BodyPartDef>
+  
+  </Defs>
